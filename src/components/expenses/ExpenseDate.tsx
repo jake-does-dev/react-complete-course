@@ -1,8 +1,8 @@
 import './ExpenseDate.css';
 
-type ExpenseDateProps = {
+interface ExpenseDateProps {
   date: Date;
-};
+}
 
 const ExpenseDate = (props: ExpenseDateProps) => {
   const year = props.date.getFullYear();
