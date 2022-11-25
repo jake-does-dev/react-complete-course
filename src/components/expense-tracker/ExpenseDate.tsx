@@ -1,4 +1,4 @@
-import './ExpenseItem.css';
+import './ExpenseDate.css';
 
 type ExpenseDateProps = {
   date: Date;
