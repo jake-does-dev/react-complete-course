@@ -26,7 +26,6 @@
     "prettier"
   ],
   "rules": {
-//    "react/jsx-uses-react": "error",
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-vars": "error",
     "no-unused-vars": [
