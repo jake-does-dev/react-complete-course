@@ -2,7 +2,7 @@ import './Expenses.css';
 import ExpenseItem from './ExpenseItem';
 
 type ExpensesProp = {
-  expenses: {
+  items: {
     id: string;
     title: string;
     amount: number;
@@ -13,7 +13,7 @@ type ExpensesProp = {
 function Expenses(props: ExpensesProp) {
   return (
     <div className={'expenses'}>
-      {props.expenses.map((e) => (
+      {props.items.map((e) => (
         <ExpenseItem
           key={e.id}
           title={e.title}
