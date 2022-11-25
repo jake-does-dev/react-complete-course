@@ -1,7 +1,6 @@
-import ExpenseItem from './components/expense-tracker/ExpenseItem';
-import Expenses from './components/expense-tracker/Expenses';
+import Expenses from './components/expenses/Expenses';
 
-function AppExpenseTracker() {
+const AppExpenseTracker = () => {
   const expenses = [
     {
       id: 'e1',
@@ -35,6 +34,6 @@ function AppExpenseTracker() {
       <Expenses items={expenses} />
     </div>
   );
-}
+};
 
 export default AppExpenseTracker;
