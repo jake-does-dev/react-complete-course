@@ -125,3 +125,25 @@ const sortArgs = (...args: number[]) : number[] => args.sort();
 </td>
 </tr>
 </table>
+<hr>
+
+## Destructuring
+Easily extract array elements or object properties and store them in variables.
+```typescript
+const [a, b] = ['Hello', 'Jake'];
+console.log(a); // Hello
+console.log(b); // Jake
+
+const { name } = { name: 'Jake', age: 27 };
+console.log(name); // Jake
+console.log(age); // undefined
+```
+<hr>
+
+## Value Types and Reference Types
+* Primitives are value types, they pass by value.
+* Objects are reference types, they pass by reference.
+<hr>
+
+## Refreshing Array Functions
+* Things like `map`, `reduce`, etc.
