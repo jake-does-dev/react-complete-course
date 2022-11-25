@@ -1,4 +1,5 @@
 import ExpenseItem from './components/expense-tracker/ExpenseItem';
+import Expenses from './components/expense-tracker/Expenses';
 
 function AppExpenseTracker() {
   const expenses = [
@@ -31,9 +32,7 @@ function AppExpenseTracker() {
   return (
     <div>
       <h2>Let&apos;s get started!</h2>
-      {expenses.map((e) => (
-        <ExpenseItem key={e.id} title={e.title} amount={e.amount} date={e.date} />
-      ))}
+      <Expenses expenses={expenses} />
     </div>
   );
 }
