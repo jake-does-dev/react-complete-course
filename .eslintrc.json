@@ -29,17 +29,11 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-vars": "error",
     "react/jsx-tag-spacing": "error",
-    "no-unused-vars": [
-      "error",
-      {
-        "varsIgnorePattern": "^_",
-        "argsIgnorePattern": "^_",
-        "destructuredArrayIgnorePattern": "^_"
-      }
-    ],
     "camelcase": "error",
     "spaced-comment": "error",
-    "no-duplicate-imports": "error"
+    "no-duplicate-imports": "error",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error"
   },
   "settings": {
     "import/resolver": {

@@ -89,7 +89,28 @@ const FormInput = () => {
 </tr>
 </table>
 
-## Two way bindings
+## Two-Way binding
 For any HTML element that has the `value` attribute, we can assign this to a variable that we have in scope.
 
 If this variable updates (as it is a part of the `useState` hook), then we introduce a two-way binding!
+
+## Child-to-Parent Component Communication
+We can introduce properties on our components that take functions as parameters (similarly to, for example, the
+onChange property available on some built in components).
+
+This will allow us to communicate from child to parent.
+
+The convention for function props is to prepend them with `on`.
+
+Note: props can only be passed from parent to child; skipping of intermediate components is not allowed
+
+Here are the steps:
+1. Pass a function as a prop to the `Child` component.
+2. Call the function in the `Child` component and pass the data as arguments.
+3. Access the data in the function in the `Parent`.
+
+We have done this in with the new expense process:
+* `NewExpense` is a parent of `ExpenseForm`
+* We pass the function property `onSaveExpenseData` to the child (`ExpenseForm`)
+* We invoke the function in `ExpenseForm`, passing in the data required
+* Done!

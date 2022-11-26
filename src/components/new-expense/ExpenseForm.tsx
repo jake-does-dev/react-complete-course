@@ -1,7 +1,12 @@
 import './ExpenseForm.css';
 import React, { useState } from 'react';
+import { ExpenseItemProps } from '../expenses/ExpenseItem';
 
-const ExpenseForm = () => {
+interface ExpenseFormProps {
+  onSaveExpenseData: (userInput: ExpenseItemProps) => void;
+}
+
+const ExpenseForm = ({ onSaveExpenseData }: ExpenseFormProps) => {
   const initialInputState = {
     title: '',
     amount: '',
@@ -31,7 +36,12 @@ const ExpenseForm = () => {
   const submitHandler = (formEvent: React.FormEvent<HTMLFormElement>) => {
     formEvent.preventDefault();
 
-    console.log(userInput);
+    onSaveExpenseData({
+      id: crypto.randomUUID(),
+      title: userInput.title,
+      amount: parseFloat(userInput.amount),
+      date: new Date(userInput.date),
+    });
 
     setUserInput(initialInputState);
   };

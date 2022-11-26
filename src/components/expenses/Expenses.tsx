@@ -1,22 +1,18 @@
 import './Expenses.css';
-import ExpenseItem from './ExpenseItem';
+import ExpenseItem, { ExpenseItemProps } from './ExpenseItem';
 import Card from '../ui/Card';
 
 interface ExpensesProp {
-  items: {
-    id: string;
-    title: string;
-    amount: number;
-    date: Date;
-  }[];
+  items: ExpenseItemProps[];
 }
 
-const Expenses = (props: ExpensesProp) => (
+const Expenses = ({ items }: ExpensesProp) => (
   <Card className={'expenses'}>
-    {props.items.map((e) => (
+    {items.map((e) => (
       <ExpenseItem
         key={e.id}
-        initialTitle={e.title}
+        id={e.id}
+        title={e.title}
         amount={e.amount}
         date={e.date}
       />
