@@ -36,9 +36,9 @@ const AppExpenseTracker = () => {
   };
 
   return (
-    <div>
+    <div className={'App'}>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} />
+      <Expenses expenses={expenses} />
     </div>
   );
 };
