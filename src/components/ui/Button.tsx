@@ -7,10 +7,10 @@ interface ButtonProps {
   onClick: () => void;
 }
 
-const Button = (props: ButtonProps) => {
+const Button = ({ children, onClick, type }: ButtonProps) => {
   return (
-    <button type={props.type} className='button' onClick={props.onClick}>
-      {props.children}
+    <button type={type} className='button' onClick={onClick}>
+      {children}
     </button>
   );
 };

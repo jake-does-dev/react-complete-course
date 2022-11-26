@@ -6,6 +6,6 @@ interface CardProps {
   children?: ReactNode;
 }
 
-const Card = (props: CardProps) => <div className={'card ' + props.className}>{props.children}</div>;
+const Card = ({ children, className }: CardProps) => <div className={'card ' + className}>{children}</div>;
 
 export default Card;

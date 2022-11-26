@@ -8,17 +8,17 @@ interface CourseGoalItemProps {
   onDelete(id: string): void;
 }
 
-const CourseGoalItem = (props: CourseGoalItemProps) => {
+const CourseGoalItem = ({ children, id, onDelete }: CourseGoalItemProps) => {
   // const [deleteText, setDeleteText] = useState('');
 
   const deleteHandler = () => {
     // setDeleteText('(Deleted!)');
-    props.onDelete(props.id);
+    onDelete(id);
   };
 
   return (
     <li className='goal-item' onClick={deleteHandler}>
-      {props.children}
+      {children}
     </li>
   );
 };
