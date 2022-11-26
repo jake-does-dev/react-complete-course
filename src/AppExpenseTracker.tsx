@@ -32,7 +32,7 @@ const AppExpenseTracker = () => {
   ]);
 
   const addExpenseHandler = (expenseData: ExpenseItemProps) => {
-    setExpenses((prevExpenses) => [...prevExpenses, expenseData]);
+    setExpenses((prevExpenses) => [expenseData, ...prevExpenses]);
   };
 
   return (
