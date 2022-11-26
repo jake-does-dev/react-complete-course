@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import AppExpenseTracker from './AppExpenseTracker';
+import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    {/* <App />*/}
-    <AppExpenseTracker />
+    <App />
   </React.StrictMode>,
 );
