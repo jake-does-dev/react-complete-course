@@ -1,28 +1,50 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
+import React, { useState } from 'react';
+
 import './App.css';
+import CourseGoalList from './components/course-goals/CourseGoalList';
+import CourseInput from './components/course-goals/CourseInput';
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [courseGoals, setCourseGoals] = useState([
+    { text: 'Do all exercises!', id: 'g1' },
+    { text: 'Finish the course!', id: 'g2' },
+  ]);
+
+  const addGoalHandler = (enteredText: string) => {
+    setCourseGoals((prevGoals) => {
+      const updatedGoals = [...prevGoals];
+      updatedGoals.unshift({ text: enteredText, id: Math.random().toString() });
+      return updatedGoals;
+    });
+  };
+
+  const deleteItemHandler = (goalId: string) => {
+    setCourseGoals((prevGoals) => {
+      return prevGoals.filter((goal) => goal.id !== goalId);
+    });
+  };
+
+  let content = <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>;
+
+  if (courseGoals.length > 0) {
+    content = <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} />;
+  }
 
   return (
-    <div className='App'>
-      <div>
-        <a href='https://vitejs.dev' target='_blank' rel='noreferrer'>
-          <img src='/vite.svg' className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://reactjs.org' target='_blank' rel='noreferrer'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
+    <div>
+      <section id='goal-form'>
+        <CourseInput onAddGoal={addGoalHandler} />
+      </section>
+      <section id='goals'>
+        {content}
+        {/* {courseGoals.length > 0 && (
+          <CourseGoalList
+            items={courseGoals}
+            onDeleteItem={deleteItemHandler}
+          />
+        ) // <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
+        } */}
+      </section>
     </div>
   );
 };
