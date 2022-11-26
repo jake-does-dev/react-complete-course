@@ -114,3 +114,18 @@ We have done this in with the new expense process:
 * We pass the function property `onSaveExpenseData` to the child (`ExpenseForm`)
 * We invoke the function in `ExpenseForm`, passing in the data required
 * Done!
+
+## Controlled vs. Uncontrolled Components
+When you create a two-way binding, you are creating a controlled component.
+
+In our case, ExpensesFilter is a controlled component - both its value and changes to its value are handled by
+a parent component.
+
+## Stateless vs. Stateful components
+In our case, `ExpenseItem` is Stateless/presentational/dumb as it doesn't have any internal state.
+It is just there to output data.
+
+There should be very few stateful components - if there are too many, then we are probably creating components
+that are too large and have too much responsibility.
+
+You manage state in a few components, and pass it around between other components.
