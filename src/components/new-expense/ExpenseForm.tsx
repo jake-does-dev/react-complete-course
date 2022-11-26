@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 import { ExpenseItemProps } from '../expenses/ExpenseItem';
 
 interface ExpenseFormProps {
+  onCancel: () => void;
   onSaveExpenseData: (userInput: ExpenseItemProps) => void;
 }
 
-const ExpenseForm = ({ onSaveExpenseData }: ExpenseFormProps) => {
+const ExpenseForm = ({ onCancel, onSaveExpenseData }: ExpenseFormProps) => {
   const initialInputState = {
     title: '',
     amount: '',
@@ -46,6 +47,10 @@ const ExpenseForm = ({ onSaveExpenseData }: ExpenseFormProps) => {
     setUserInput(initialInputState);
   };
 
+  const cancelHandler = () => {
+    onCancel();
+  };
+
   return (
     <form onSubmit={submitHandler}>
       <div className={'new-expense__controls'}>
@@ -69,6 +74,7 @@ const ExpenseForm = ({ onSaveExpenseData }: ExpenseFormProps) => {
         </div>
       </div>
       <div className={'new-expense__actions'}>
+        <button onClick={cancelHandler}>Cancel</button>
         <button type={'submit'}>Add Expense</button>
       </div>
     </form>
