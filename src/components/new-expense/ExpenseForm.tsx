@@ -2,38 +2,38 @@ import './ExpenseForm.css';
 import React, { useState } from 'react';
 
 const ExpenseForm = () => {
-  const [userInput, setUserInput] = useState({
-    enteredTitle: '',
-    enteredAmount: 0,
-    enteredDate: '',
-  });
+  const initialInputState = {
+    title: '',
+    amount: '',
+    date: '',
+  };
+
+  const [userInput, setUserInput] = useState(initialInputState);
 
   const titleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) =>
     setUserInput((prevState) => ({
       ...prevState,
-      enteredTitle: event.target.value,
+      title: event.target.value,
     }));
 
   const amountChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) =>
     setUserInput((prevState) => ({
       ...prevState,
-      enteredAmount: parseFloat(event.target.value),
+      amount: event.target.value,
     }));
 
   const dateChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) =>
     setUserInput((prevState) => ({
       ...prevState,
-      enteredDate: event.target.value,
+      date: event.target.value,
     }));
 
   const submitHandler = (formEvent: React.FormEvent<HTMLFormElement>) => {
     formEvent.preventDefault();
 
-    setUserInput({
-      enteredTitle: '',
-      enteredAmount: 0,
-      enteredDate: '',
-    });
+    console.log(userInput);
+
+    setUserInput(initialInputState);
   };
 
   return (
@@ -43,6 +43,7 @@ const ExpenseForm = () => {
           <label>Title</label>
           <input
             type={'text'}
+            value={userInput.title}
             onChange={titleChangeHandler}
           />
         </div>
@@ -50,6 +51,7 @@ const ExpenseForm = () => {
           <label>Amount</label>
           <input
             type={'number'}
+            value={userInput.amount}
             min={'0.01'}
             step={'0.01'}
             onChange={amountChangeHandler}
@@ -59,6 +61,7 @@ const ExpenseForm = () => {
           <label>Date</label>
           <input
             type={'date'}
+            value={userInput.date}
             min={'2019-01-01'}
             max={'2022-12-31'}
             onChange={dateChangeHandler}
