@@ -28,3 +28,13 @@ return (
 
 Remember the fundamental rule of TSX - you can only return one root element!!!
 So, wrap in `<div>` or `<>` or anything else you love :)
+
+## Dynamic Styles
+
+You can add the `style` attribute and enrich this dynamically by providing JSON inside.
+For example:
+
+```tsx
+<div style={{'background-color': 'red'}}></div>
+<div style={{height: variable, backgroundColor: 'red' }}></div>
+```
