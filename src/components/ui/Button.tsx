@@ -1,18 +1,28 @@
-import './Button.css';
-import React from 'react';
+import styled from 'styled-components';
 
-interface ButtonProps {
-  type: 'button' | 'reset' | 'submit' | undefined;
-  children: string;
-  onClick: () => void;
-}
+// This really is just a button; any props on `button` get passed to our styled.button.
+// Subsequently, they're used in the same way as a standard `button`!
+const Button = styled.button`
+  & {
+    font: inherit;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #8b005d;
+    color: white;
+    background: #8b005d;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
+    cursor: pointer;
+  }
 
-const Button = ({ children, onClick, type }: ButtonProps) => {
-  return (
-    <button type={type} className='button' onClick={onClick}>
-      {children}
-    </button>
-  );
-};
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:active {
+    background: #ac0e77;
+    border-color: #ac0e77;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
+  }
+`;
 
 export default Button;
