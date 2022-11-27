@@ -2,12 +2,15 @@ import styles from './Button.module.css';
 
 interface ButtonProps {
   text: string;
+  onClick?: () => void;
 }
 
-const Button = ({ text }: ButtonProps) => {
+const Button = ({ onClick, text }: ButtonProps) => {
   return (
     <div>
-      <button className={styles.button}>{text}</button>
+      <button className={styles.button} onClick={onClick}>
+        {text}
+      </button>
     </div>
   );
 };
