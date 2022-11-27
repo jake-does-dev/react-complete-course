@@ -2,10 +2,14 @@ import addUserStyles from './AddUser.module.css';
 import React, { useState } from 'react';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
-import User from './User';
+import { UserProps } from './User';
 
-const AddUser = () => {
-  const [userInput, setUserInput] = useState<User>({
+interface AddUserProps {
+  onAddUser: (userInput: UserProps) => void;
+}
+
+const AddUser = (props: AddUserProps) => {
+  const [userInput, setUserInput] = useState<UserProps>({
     name: '',
     age: 0,
   });
@@ -22,9 +26,14 @@ const AddUser = () => {
       age: parseInt(event.target.value),
     }));
 
+  const submitUserHandler = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    props.onAddUser(userInput);
+  };
+
   return (
     <Card className={addUserStyles}>
-      <form>
+      <form onSubmit={submitUserHandler}>
         <label>
           <h3>Username</h3>
         </label>

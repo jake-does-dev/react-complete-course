@@ -5,7 +5,6 @@ import UsersList from './components/users/UsersList';
 const App = () => {
   return (
     <div className='App'>
-      <AddUser />
       <UsersList />
     </div>
   );
