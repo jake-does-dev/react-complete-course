@@ -1,6 +1,6 @@
-# How this structured
+# How this repo is structured
 
-This project aims to work through the Academind course [React - The Complete Guide](https://learning.oreilly.com/videos/react-the/9781801812603/)
+This project aims to work through the Academind course [React - The Complete Guide](https://learning.oreilly.com/videos/react-the/9781801812603/). Any supporting code files are available through the supplementary [course materials repo](https://github.com/academind/react-complete-guide-code).
 
 For each of the major projects in this course:
 
