@@ -51,7 +51,9 @@ const AddUser = (props: AddUserProps) => {
       {showErrorModal && (
         <ErrorModal
           title={'Invalid user'}
-          message={'Please enter a valid name (non-empty) and a valid age (non negative)!'}
+          message={
+            'Please enter a valid name (non-empty) and a valid age (non negative)!'
+          }
           onDismiss={dismissModalHandler}
         />
       )}
@@ -60,12 +62,24 @@ const AddUser = (props: AddUserProps) => {
           <label>
             <h3>Username</h3>
           </label>
-          <input name={'username'} value={userInput.name} type={'text'} onChange={nameChangeHandler} />
+          <input
+            name={'username'}
+            value={userInput.name}
+            type={'text'}
+            onChange={nameChangeHandler}
+          />
 
           <label>
             <h3>Age (Years)</h3>
           </label>
-          <input name={'age'} value={userInput.age} min={0} step={1} type={'number'} onChange={ageChangeHandler} />
+          <input
+            name={'age'}
+            value={userInput.age}
+            min={0}
+            step={1}
+            type={'number'}
+            onChange={ageChangeHandler}
+          />
           <Button text={'Add User'}></Button>
         </form>
       </Card>
