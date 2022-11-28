@@ -17,11 +17,16 @@ const Expenses = ({ expenses }: ExpensesProp) => {
     setFilteredYear(year);
   };
 
-  const filteredExpenses = expenses.filter((e) => e.date.getFullYear() == filteredYear);
+  const filteredExpenses = expenses.filter(
+    (e) => e.date.getFullYear() == filteredYear,
+  );
 
   return (
     <Card className={'expenses'}>
-      <ExpensesFilter selectedYear={filteredYear} onYearChange={filterChangeHandler} />
+      <ExpensesFilter
+        selectedYear={filteredYear}
+        onYearChange={filterChangeHandler}
+      />
       <ExpensesChart expenses={filteredExpenses} />
       <ExpensesList expenses={filteredExpenses} />
     </Card>

@@ -18,7 +18,10 @@ const ChartBar = ({ label, maxValue, value }: ChartBarProps) => {
     <div className={'chart-bar'}>
       <div className={'chart-bar__label'}>{label}</div>
       <div className={'chart-bar__inner'}>
-        <div className={'chart-bar__fill'} style={{ height: barFillHeight }}></div>
+        <div
+          className={'chart-bar__fill'}
+          style={{ height: barFillHeight }}
+        ></div>
       </div>
     </div>
   );

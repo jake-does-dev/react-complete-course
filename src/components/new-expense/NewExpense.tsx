@@ -24,9 +24,14 @@ const NewExpense = ({ onAddExpense }: NewExpenseProps) => {
 
   return (
     <div className={'new-expense'}>
-      {!showNewExpenseForm && <button onClick={openNewExpenseFormHandler}>Add New Expense</button>}
+      {!showNewExpenseForm && (
+        <button onClick={openNewExpenseFormHandler}>Add New Expense</button>
+      )}
       {showNewExpenseForm && (
-        <ExpenseForm onCancel={closeNewExpenseFormHandler} onSaveExpenseData={saveExpenseDataHandler} />
+        <ExpenseForm
+          onCancel={closeNewExpenseFormHandler}
+          onSaveExpenseData={saveExpenseDataHandler}
+        />
       )}
     </div>
   );

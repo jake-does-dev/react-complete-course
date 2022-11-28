@@ -7,7 +7,10 @@ interface ExpensesFilterProps {
   onYearChange: (selectedYear: number) => void;
 }
 
-const ExpensesFilter = ({ selectedYear, onYearChange }: ExpensesFilterProps) => {
+const ExpensesFilter = ({
+  selectedYear,
+  onYearChange,
+}: ExpensesFilterProps) => {
   const yearChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
     onYearChange(parseInt(e.target.value));
   };

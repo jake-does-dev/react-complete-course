@@ -56,11 +56,21 @@ const ExpenseForm = ({ onCancel, onSaveExpenseData }: ExpenseFormProps) => {
       <div className={'new-expense__controls'}>
         <div className={'new-expense__control'}>
           <label>Title</label>
-          <input type={'text'} value={userInput.title} onChange={titleChangeHandler} />
+          <input
+            type={'text'}
+            value={userInput.title}
+            onChange={titleChangeHandler}
+          />
         </div>
         <div className={'new-expense__control'}>
           <label>Amount</label>
-          <input type={'number'} value={userInput.amount} min={'0.01'} step={'0.01'} onChange={amountChangeHandler} />
+          <input
+            type={'number'}
+            value={userInput.amount}
+            min={'0.01'}
+            step={'0.01'}
+            onChange={amountChangeHandler}
+          />
         </div>
         <div className={'new-expense__control'}>
           <label>Date</label>
