@@ -24,10 +24,14 @@ const App = () => {
     });
   };
 
-  let content = <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>;
+  let content = (
+    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
+  );
 
   if (courseGoals.length > 0) {
-    content = <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} />;
+    content = (
+      <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} />
+    );
   }
 
   return (
